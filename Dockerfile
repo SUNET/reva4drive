@@ -19,6 +19,8 @@ RUN chmod +x /usr/local/bin/revad /start.sh
 RUN mkdir -p /etc/apache2/mods-enabled/ \
 	&& ln -s /etc/apache2/mods-available/rewrite.load  /etc/apache2/mods-enabled/ \
 	&& ln -s /etc/apache2/mods-available/socache_shmcb.load /etc/apache2/mods-enabled/ \
+	&& ln -s /etc/apache2/mods-available/proxy.conf /etc/apache2/mods-enabled/ \
+	&& ln -s /etc/apache2/mods-available/proxy.load /etc/apache2/mods-enabled/ \
 	&& ln -s /etc/apache2/mods-available/ssl.conf /etc/apache2/mods-enabled/ \
 	&& ln -s /etc/apache2/mods-available/ssl.load /etc/apache2/mods-enabled/
 RUN usermod -a -G tty www-data
