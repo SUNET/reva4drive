@@ -25,6 +25,8 @@ RUN mkdir -p /etc/apache2/mods-enabled/ \
 	&& ln -s /etc/apache2/mods-available/proxy_http2.load /etc/apache2/mods-enabled/ \
 	&& ln -s /etc/apache2/mods-available/ssl.conf /etc/apache2/mods-enabled/ \
 	&& ln -s /etc/apache2/mods-available/ssl.load /etc/apache2/mods-enabled/
+RUN ln -sf /proc/self/fd/1 /var/log/apache2/access.log && \
+    ln -sf /proc/self/fd/1 /var/log/apache2/error.log
 RUN usermod -a -G tty www-data
 EXPOSE 19443 
 CMD /start.sh
