@@ -1,0 +1,4 @@
+[shared]
+jwt_secret = "this is just a dummy file, which is replaced by docker-compose"
+
+[http.services.helloworld]

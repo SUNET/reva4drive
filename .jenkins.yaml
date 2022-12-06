@@ -1,0 +1,15 @@
+---
+environment_variables:
+    REVA_VERSION: 'v2.12.0'
+git:
+  branch: main
+triggers:
+  cron: "@daily"
+clean_workspace: true
+builders:
+  - docker
+docker_name: drive/sciencemesh-reva
+docker_tags:
+  - "${REVA_VERSION}"
+  - "latest"
+docker_no_cache: true
