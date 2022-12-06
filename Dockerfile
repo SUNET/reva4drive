@@ -5,8 +5,6 @@ ENV TZ=Etc/UTC
 ENV REVA_VERSION=v2.12.0
 RUN mkdir -p /etc/revad/tls
 RUN mkdir -p /run/revad
-RUN mkdir -p /var/tmp/reva
-RUN touch /var/tmp/reva/ocm-invites.json
 RUN apt-get update && apt-get install -y  \
 	vim \
   wget 
