@@ -3,7 +3,8 @@ FROM debian:bullseye-slim
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
 ENV REVA_VERSION=v2.12.0
-RUN mkdir -p /{run,etc}/revad
+RUN mkdir -p /etc/revad
+RUN mkdir -p /run/revad
 RUN apt-get update && apt-get install -y  \
   wget \
 	vim
