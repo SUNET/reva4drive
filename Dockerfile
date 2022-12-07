@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y  \
 #RUN wget https://github.com/cs3org/reva/releases/download/${REVA_VERSION}/revad_${REVA_VERSION}_linux_amd64 \
 #	&& mv revad_${REVA_VERSION}_linux_amd64 /usr/local/bin/revad
 RUN wget https://sunet.drive.test.sunet.se/index.php/s/jZ34EZn68J29pwD/download/revad -O /usr/local/bin/revad
+RUN chmod +x /usr/local/bin/revad
 COPY --chown=root:root ./start.sh /
 COPY --chown=root:root ./revad.toml /etc/revad/
 RUN chmod +x /usr/local/bin/revad /start.sh
