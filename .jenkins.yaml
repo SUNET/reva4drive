@@ -1,6 +1,6 @@
 ---
 environment_variables:
-    REVA_VERSION: 'v2.12.0'
+    REVA_VERSION: 'v1.26.0'
 git:
   branch: main
 triggers:
