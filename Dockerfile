@@ -19,7 +19,7 @@ RUN wget -q https://downloads.rclone.org/rclone-current-linux-amd64.deb \
   && dpkg -i ./rclone-current-linux-amd64.deb \
   && rm ./rclone-current-linux-amd64.deb && rm -rf /var/lib/apt/lists/*
 COPY --chown=root:root ./start.sh /
-COPY --chown=root:root --chmod=0700 ./metrics.sh /
+COPY --chown=root:root ./metrics.sh /
 COPY --chown=root:root ./revad.toml /etc/revad/
 RUN chmod +x /usr/local/bin/revad /start.sh
 RUN usermod -a -G tty www-data
