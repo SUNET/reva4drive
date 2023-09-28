@@ -1,5 +1,5 @@
 FROM golang:bookworm
-ARG REVA_VERSION
+ARG REVA_VERSION=v1.26.0
 RUN mkdir /build && cd /build && git clone https://github.com/cs3org/reva.git && cd reva && git checkout tags/${REVA_VERSION}
 WORKDIR /build/reva/
 RUN make revad
