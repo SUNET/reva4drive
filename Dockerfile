@@ -13,8 +13,10 @@ ENV REVA_VERSION=${REVA_VERSION}
 RUN mkdir -p /etc/revad/tls
 RUN mkdir -p /run/revad
 RUN apt-get update && apt-get install -y  \
+  gawk \
 	vim \
   wget
+RUN apt-get remove -y mawk
 RUN wget -q https://downloads.rclone.org/rclone-current-linux-amd64.deb \
   && dpkg -i ./rclone-current-linux-amd64.deb \
   && rm ./rclone-current-linux-amd64.deb && rm -rf /var/lib/apt/lists/*
