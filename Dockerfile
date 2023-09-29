@@ -14,6 +14,7 @@ RUN mkdir -p /etc/revad/tls
 RUN mkdir -p /run/revad
 RUN apt-get update && apt-get install -y  \
   gawk \
+  jq \
 	vim \
   wget
 RUN apt-get remove -y mawk
